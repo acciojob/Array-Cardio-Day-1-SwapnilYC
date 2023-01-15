@@ -61,11 +61,17 @@ export function sort() {
 // 4. How many years did all the inventors live?
 // Return the total number of years all the inventors lived
 export function reduce() {
-    let livedYears = inventors.map((x)=>{
-        return x.passed - x.year;;
-    });
-    console.log(livedYears);
-    return livedYears;
+    let sum = 0;
+    // sum += inventors.forEach((x)=>{
+    //     console.log(x.passed - x.year);
+    //     return x.passed - x.year;
+
+    // });
+    for(let x of inventors){
+        sum += x.passed - x.year;
+    }
+    // console.log(sum);
+    return sum;
 }
 
 // 5. Sort the inventors by years lived and return the sorted array

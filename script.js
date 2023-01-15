@@ -83,9 +83,8 @@ export function sortbylived() {
 // 6. sort Exercise
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
-    let ans = inventors.map((x)=>{
-
-    })
+    let sortedArray = inventors.sort(function(a, b){return a.last - b.last});
+    return sortedArray;
 }
 
 // 7. Reduce Exercise
@@ -94,4 +93,16 @@ const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bik
 
 export function reducedSum() {
     // Return an object containing transports as key and its number of occurances as the key's value
+    // https://bobbyhadz.com/blog/javascript-count-occurrences-of-each-element-in-array
+    // This is hashmap of JS
+    const count = {};
+
+    for (const element of data) {
+    if (count[element]) {
+        count[element] += 1;
+    } else {
+        count[element] = 1;
+    }
+    return count;
+    }
 }

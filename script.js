@@ -30,7 +30,7 @@ const people = [
 // 1. Filter the list of inventors for those who were born in the 1500's and return the filtered array
 export function myfilter() {
     let filteredArray = inventors.filter(function (val) {
-        if(val.year <= 1599 && val.year >=1500){
+        if (val.year <= 1599 && val.year >= 1500) {
             return val;
         }
     })
@@ -41,7 +41,7 @@ export function myfilter() {
 // 2. Give us an array of the inventor first and last names (i.e. full name)
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
-    let arr = inventors.map((x)=>{
+    let arr = inventors.map((x) => {
         return `${x.first} ${x.last}`
     });
     return arr;
@@ -51,7 +51,7 @@ export function map() {
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest and return the sorted array
 export function sort() {
-    let sortedArray = inventors.sort(function(a, b){return a.year - b.year});
+    let sortedArray = inventors.sort(function (a, b) { return a.year - b.year });
     return sortedArray;
 }
 
@@ -67,7 +67,7 @@ export function reduce() {
     //     return x.passed - x.year;
 
     // });
-    for(let x of inventors){
+    for (let x of inventors) {
         sum += x.passed - x.year;
     }
     // console.log(sum);
@@ -76,14 +76,14 @@ export function reduce() {
 
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
-    let sortedArray = inventors.sort(function(a, b){return (a.year - a.passed) - (b.year - b.passed)});
+    let sortedArray = inventors.sort(function (a, b) { return (a.year - a.passed) - (b.year - b.passed) });
     return sortedArray;
 }
 
 // 6. sort Exercise
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
-    let sortedArray = inventors.sort(function(a, b){return a.last - b.last});
+    let sortedArray = inventors.sort(function (a, b) { return a.last - b.last }).map((e) => e.last);
     return sortedArray;
 }
 
@@ -98,11 +98,11 @@ export function reducedSum() {
     const count = {};
 
     for (const element of data) {
-    if (count[element]) {
-        count[element] += 1;
-    } else {
-        count[element] = 1;
+        if (count[element]) {
+            count[element] += 1;
+        } else {
+            count[element] = 1;
+        }
     }
     return count;
-    }
 }
